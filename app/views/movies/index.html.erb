@@ -1,9 +1,9 @@
-<h1><%= pluralize(@movies.size, 'Movie') %></h1>
+<h1><%= pluralize(@movie.size, 'Movie') %></h1>
 
-<% @movies.each do |movie| %>
+<% @movie.each do |movie| %>
   <article>
     <header>
-      <h2><%= movie.title %></h2>
+      <h2><%= link_to(movie.title, movie_path(movie)) %></h2>
     </header>
     <p>
       <%= truncate(movie.description, length: 40, separator: ' ') %>
