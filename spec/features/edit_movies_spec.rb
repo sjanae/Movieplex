@@ -5,7 +5,7 @@ require 'capybara/rails'
 describe "Editing a movie" do
   it "updates the movie and details" do
     
-    visit movie_url(movie)
+    visit movie_path(movie)
    	click_link 'Edit'
     expect(current_path).to eq(edit_movie_path(movie))
     fill_in 'Title', with: "Updated Movie Title"
