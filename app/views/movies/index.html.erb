@@ -6,9 +6,11 @@
   <article>
     <header>
       <h2><%= link_to(movie.title, movie_path(movie)) %></h2>
+        <%= image_tag(movie.image_file_name, :height =>"250", :width => "200") %>
+      <h3><%= movie.cast %></h3>
     </header>
     <p>
-      <%= truncate(movie.description, length: 40, separator: ' ') %>
+      <%= truncate(movie.description, length: 75, separator: ' ') %>
     </p>
     <table>
       <tr>
@@ -18,6 +20,10 @@
       <tr>
         <th>Rating:</th>
         <td><%= movie.rating %></td>
+      </tr>
+      <tr>
+        <th>Duration:</th>
+        <td><%= movie.duration %></td>
       </tr>
       <tr>
         <th>Total Gross:</th>
