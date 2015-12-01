@@ -1,7 +1,9 @@
 class Movie < ActiveRecord::Base
+  has_many :reviews, dependent: :destroy
+  
   validates :title, :released_on, :duration, presence: true
 
-  validates :description, length: { minimum: 10 }
+  validates :description, length: { minimum: 25 }
 
   validates :total_gross, numericality: { greater_than_or_equal_to: 0 }
 
@@ -32,5 +34,13 @@ class Movie < ActiveRecord::Base
 
   def flop?
     total_gross.blank? || total_gross < 50000000
+  end
+  
+  def average_stars
+    reviews.average(:stars)
+  end
+  
+  def recent_reviews
+    reviews.order('created_at desc').limit(2)
   end
 end
