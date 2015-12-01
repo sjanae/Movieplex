@@ -1,12 +1,12 @@
 <h1><%= pluralize(@movie.size, 'Movie') %></h1>
 
-<%= link_to("Add New Movie", new_movie_path) %>
 
 <% @movie.each do |movie| %>
   <article>
     <header>
+      <article>
       <h2><%= link_to(movie.title, movie_path(movie)) %></h2>
-        <%= image_tag(movie.image_file_name, :height =>"250", :width => "200") %>
+        <%= image_tag(movie.image_file_name) %>
       <h3><%= movie.cast %></h3>
     </header>
     <p>
@@ -32,4 +32,3 @@
     </table>
   </article>
 <% end %>
-<%= render 'footer' %>
