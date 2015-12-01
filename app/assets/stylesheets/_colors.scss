@@ -1,4 +1,13 @@
 $primary-color: #cc0000;
-$secondary-color: #e6e6e6;
-$mouse-over: hotpink;
-$link-color: black;
+$secondary-color: #444;
+$primary-background-color: #F5F5F5;
+$primary-text-color: #000000;
+$errors-background-color: #DC3D3D;
+$errors-text-color: #DC3D3D;
+
+
+
+$subdued-color: darken($primary-background-color, 20%);
+
+$accent-color: lighten($secondary-color, 50%);
+$fieldset-color: lighten($secondary-color, 50%);

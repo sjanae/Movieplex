@@ -1,53 +1,151 @@
 @import "colors";
 
-header#page-header {
-  color: $secondary-color;
-  background: $primary-color;
-  padding: 5px;
-  border-bottom: 3px solid lighten($primary-color, 10%);
-  text-align: center;
-  text-transform: uppercase;
+body {
+  color: $primary-color;
+  font-family: "Helvetica Neue", Helvetica, Arial;
 }
 
-h1 {
-    text-align: center;
-    text-transform: uppercase;
+header#page-header {
+  background-color: $primary-color;
+  padding: 0px 25px;
+  text-align: center;
+
+  h1 a {
+    height: 0px;
+    padding-top: 60px;
+    display: block;
+    font-family: "Esteban", sans-serif;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
   }
 
+  a.button {
+    margin-left: 10px;
+    border-color: $subdued-color;
+    &:hover {
+      background-color: $primary-text-color;
+      color: white;
+      border-color: #000;
+      text-decoration: none;
+    }
+  }
+
+  div#masthead {
+    margin: 0 auto;
+    width: 960px;
+    position: relative;
+    text-shadow: #000 0 0 2px;
+
+    h1 {
+      margin: 0;
+      color: #fff;
+      line-height: 60px;
+    }
+
+    nav {
+      margin: 0;
+      position: absolute;
+      color: $subdued-color;
+      top: 0;
+      right: 0;
+      height: 60px;
+      a {
+        color: $primary-text-color;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
 footer#page-footer {
-  color: $primary-color;
-  background: $secondary-color;
-  text-align: center;
-  padding: 5px;
-  border-top: 3px solid darken($secondary-color, 10%);
+  background-color: $primary-text-color;
+  color: $secondary-color;
+  padding: 20px 25px;
+
+  p {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: $primary-background-color;
+    }
+  }
+}
+
+div#wrapper {
+  background: #fff;
+  padding: 10px;
+  min-height: 400px;
+  overflow: hidden;
+  div#container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 10px 0;
+    section#content {
+      width: 620px;
+      h1 {
+        margin: 0;
+        padding: 0 0 20px 0;
+      }
+    }
+  }
 }
 
 aside#sidebar {
-  float: right;
-  background: $secondary-color;
   width: 200px;
-}
+  float: right;
 
-  img {
-    float: left;
-    margin: 0px 15px;
-    border: 3px solid #F0F0F0;
-    height: 250px;
-    width: 200px;
+  h1 {
+    color: $primary-text-color;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
-  a:link {
-  	color: $link-color
-  }
-
+  a,
+  a:link,
   a:visited {
-  	color: $link-color
+    text-decoration: none;
   }
 
-  a:hover {
-  	color: $mouse-over
-  }
+  nav {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
 
-  p {
-  	text-align: center;
+      li {
+        padding: 4px 0;
+        padding-left: 25px;
+        list-style: none;
+
+        &.all-movies a {
+          display: block;
+          padding-left: 35px;
+        }
+
+        &.create-movie a {
+          display: block;
+          padding-left: 35px;
+        }
+
+        a:hover {
+          background-color: #cc0000;
+          color: white;
+        }
+
+      }
+    }
   }
+}
