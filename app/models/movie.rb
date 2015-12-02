@@ -14,7 +14,9 @@ class Movie < ActiveRecord::Base
 
   RATINGS = %w(G PG PG-13 R NC-17)
 
-  validates :rating, inclusion: { in: RATINGS }
+  validates :rating, inclusion: { in: RATINGS,
+    message: "must include G, PG-13, PG, R, or NC-17"
+  }
 
   def self.released
     where("released_on <= ?", Time.now).order("released_on desc")

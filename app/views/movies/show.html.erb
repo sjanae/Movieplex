@@ -33,31 +33,15 @@
 <p>
   <%= @movie.duration %>
 </p>
-
-<% if @movie.reviews.any? %>
-    <h3>Reviews</h3>
-    <ol id="reviews">
-      <% @movie.recent_reviews.each do |review| %>
-        <li>
-          <span class="review"><%= pluralize(review.stars, 'star') %></span>
-          <span class="user">by <%= review.name %></span>
-          <span class="date">
-            <%= time_ago_in_words(review.created_at) %> ago
-          </span>
-          <p>
-            <%= review.comment %>
-          </p>
-        </li>      
-      <% end %>
-    </ol>
-    <p>
-      Read all <%= link_to pluralize(@movie.reviews.size, "review"), movie_reviews_path(@movie) %>
-    </p>
-  <% end %>
   
   <footer>
-    <%= link_to "Write Review", new_movie_review_path(@movie), 
+    <p>
+      <%= link_to 'View All Reviews', movie_reviews_path(@movie) %>
+    </p>
+    <p>
+      <%= link_to "Write Review", new_movie_review_path(@movie), 
                 class: 'button ok review' %>
+    </p>
     <nav>
       <%= link_to 'Edit', edit_movie_path(@movie), class: 'button' %>
       <%= link_to 'Delete', @movie, 

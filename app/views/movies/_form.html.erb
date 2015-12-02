@@ -1,5 +1,5 @@
 <%= form_for(@movie) do |f| %>
-  <%= render "shared/errors" %>
+  <%= render "shared/errors", object: @movie %>
   <fieldset>
     <ol>
       <li class="required">
@@ -28,7 +28,7 @@
       </li>
       <li class="required">
         <%= f.label :image_file_name %>
-        <%= f.text_field :image_file_name %>
+        <%= f.text_field :image_file_name, :placeholder => "JPG, GIF, PNG" %>
       </li>
       <li>
         <%= f.label :cast %>
